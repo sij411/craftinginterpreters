@@ -1,6 +1,6 @@
 package com.craftinginterpreters.loxJw;
 
-public class TokenType {
+
     enum TokenType {
         // single token
         LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
@@ -23,4 +23,4 @@ public class TokenType {
 
     }
 
-}
+
