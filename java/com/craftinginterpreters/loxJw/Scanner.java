@@ -10,9 +10,10 @@ import static com.craftinginterpreters.loxJw.TokenType.*;
 class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
-    private int start = 0;
-    private int current = 0;
-    private int line = 1;
+    //  필드 문자열 위치 가리키는 오프셋
+    private int start = 0; // 스캔 중인 렉심의 첫 번째 문자
+    private int current = 0; // 현재 처리 중
+    private int line = 1; // current 위치한 소스 줄 번호
 
     Scanner(String source) {
         this.source = source;
@@ -29,7 +30,7 @@ class Scanner {
         tokens.add(new Token(EOF, "", null, line));
         return tokens;
     }
-
+    // 문자를 모두 소비했는지 체크
     private boolean isAtEnd() {
         return current >= source.length();
     }
